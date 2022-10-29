@@ -15,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BaseBottomSheetDialog : BottomSheetDialogFragment() {
 
-    val binding by viewBinding(FragmentBottomSheetDialogBaseBinding::bind)
+    private val binding by viewBinding(FragmentBottomSheetDialogBaseBinding::bind)
 
     private var image: Int = R.drawable.ic_info
     private var title: Int = R.string.unknown_error_title

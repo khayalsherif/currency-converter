@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.annotation.DrawableRes
 import az.khayalsharifli.bankrespublika.R
 
-class SpinnerAdapter(context: Context, var listSpinner: List<SpinnerItem>) :
+class SpinnerAdapter(context: Context, private var listSpinner: List<SpinnerItem>) :
     ArrayAdapter<SpinnerItem>(context, 0, listSpinner) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -38,4 +38,9 @@ class SpinnerAdapter(context: Context, var listSpinner: List<SpinnerItem>) :
     }
 }
 
-data class SpinnerItem(val currency: String, @DrawableRes val image: Int)
+data class SpinnerItem(
+    val currency: String,
+    @DrawableRes val image: Int,
+    val buyRate: String,
+    val sellRate: String
+)

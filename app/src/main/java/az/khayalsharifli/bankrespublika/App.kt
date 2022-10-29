@@ -1,6 +1,7 @@
 package az.khayalsharifli.bankrespublika
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import az.khayalsharifli.bankrespublika.di.dataModule
 import az.khayalsharifli.bankrespublika.di.domainModule
 import az.khayalsharifli.bankrespublika.di.uiModule
@@ -20,5 +21,8 @@ class App : Application() {
             val modules = listOf(dataModule, domainModule, uiModule)
             modules(modules)
         }
+
+        //Close Dark Mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }

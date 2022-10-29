@@ -4,9 +4,7 @@ import az.khayalsharifli.bankrespublika.data.local.LocalDataSource
 import az.khayalsharifli.bankrespublika.data.local.LocalDtoItem
 import az.khayalsharifli.bankrespublika.data.mapper.MoneyMapper
 import az.khayalsharifli.bankrespublika.data.remote.MoneyService
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.withContext
 
 class MoneyRepositoryImpl(
     private val service: MoneyService,
@@ -20,14 +18,7 @@ class MoneyRepositoryImpl(
 
     override suspend fun sync() {
         val remote = service.getMoney()
-        //println(remote)
-
-        try {
-            val local = remote.map { moneyMapper.fromRemoteToLocal(it) }
-            localDataSource.insertMoney(local )
-        } catch (e: Exception) {
-            println(e)
-
-        }
+        val local = remote.map { moneyMapper.fromRemoteToLocal(it) }
+        localDataSource.insertMoney(local)
     }
 }

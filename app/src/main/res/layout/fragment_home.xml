@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -45,18 +44,18 @@
                 android:orientation="horizontal">
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinner_sell"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
 
                 <EditText
                     android:id="@+id/input1"
-                    android:hint="@string/enter_value"
                     style="@style/EditTextStyle"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:hint="@string/enter_value" />
             </LinearLayout>
 
             <LinearLayout
@@ -66,18 +65,18 @@
                 android:orientation="horizontal">
 
                 <Spinner
-                    android:id="@+id/spinner2"
+                    android:id="@+id/spinner_buy"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
 
                 <EditText
                     android:id="@+id/input2"
-                    android:hint="@string/result"
                     style="@style/EditTextStyle"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:hint="@string/result" />
             </LinearLayout>
         </LinearLayout>
 
@@ -89,8 +88,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/shape_6"
-        android:elevation="@dimen/value_16"
         android:backgroundTint="@color/blue_dark"
+        android:elevation="@dimen/value_16"
         android:paddingHorizontal="@dimen/value_24"
         android:paddingVertical="@dimen/value_8"
         android:text="@string/convert"
@@ -122,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="7" />
+                android:text="@string/seven" />
 
             <TextView
                 android:id="@+id/number8"
@@ -130,7 +129,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="8" />
+                android:text="@string/eight" />
 
             <TextView
                 android:id="@+id/number9"
@@ -138,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="9" />
+                android:text="@string/nine" />
         </LinearLayout>
 
         <LinearLayout
@@ -152,7 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4" />
+                android:text="@string/four" />
 
             <TextView
                 android:id="@+id/number5"
@@ -160,7 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5" />
+                android:text="@string/fife" />
 
             <TextView
                 android:id="@+id/number6"
@@ -168,7 +167,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="6" />
+                android:text="@string/six" />
         </LinearLayout>
 
         <LinearLayout
@@ -182,7 +181,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1" />
+                android:text="@string/one" />
 
             <TextView
                 android:id="@+id/number2"
@@ -190,7 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="2" />
+                android:text="@string/two" />
 
             <TextView
                 android:id="@+id/number3"
@@ -198,7 +197,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="3" />
+                android:text="@string/three" />
         </LinearLayout>
 
         <LinearLayout
@@ -212,7 +211,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="0" />
+                android:text="@string/zero" />
 
             <TextView
                 android:id="@+id/dot"
@@ -220,7 +219,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="." />
+                android:text="@string/dot" />
 
             <ImageView
                 android:id="@+id/clear_symbol"
@@ -228,6 +227,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
+                android:contentDescription="@string/clear"
                 android:paddingVertical="@dimen/value_16"
                 android:src="@drawable/ic_clear_symbol" />
         </LinearLayout>

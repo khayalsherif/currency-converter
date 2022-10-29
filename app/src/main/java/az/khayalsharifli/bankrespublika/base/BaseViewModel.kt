@@ -3,8 +3,6 @@ package az.khayalsharifli.bankrespublika.base
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.navigation.NavDirections
-import androidx.navigation.Navigator
 import az.khayalsharifli.bankrespublika.R
 import az.khayalsharifli.bankrespublika.domain.error.NetworkError
 import az.khayalsharifli.bankrespublika.domain.error.ServerError
@@ -45,14 +43,6 @@ abstract class BaseViewModel : ViewModel() {
             }
             execute(param, proxy)
         }
-    }
-
-    fun navigate(directions: NavDirections, extras: Navigator.Extras? = null) {
-        navigationCommands.postValue(NavigationCommand.To(directions, extras))
-    }
-
-    fun navigate(command: NavigationCommand) {
-        navigationCommands.postValue(command)
     }
 
     private fun handleError(t: Throwable) {

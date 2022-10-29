@@ -5,6 +5,7 @@ import az.khayalsharifli.bankrespublika.base.BaseViewModel
 import az.khayalsharifli.bankrespublika.data.local.LocalDtoItem
 import az.khayalsharifli.bankrespublika.domain.usecase.money.MoneyObserveUseCase
 import az.khayalsharifli.bankrespublika.domain.usecase.money.MoneySyncUseCase
+import az.khayalsharifli.bankrespublika.tools.SingleLiveEvent
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -14,6 +15,10 @@ class HomeViewModel(
     private val moneyObserveUseCase: MoneyObserveUseCase,
     moneySyncUseCase: MoneySyncUseCase
 ) : BaseViewModel() {
+
+    data class SelectedCurrencyCodes(val sellRate: String = "", val buyRate: String = "")
+
+    val selectedCurrencyCodes = SingleLiveEvent<SelectedCurrencyCodes>()
 
     private var _moneyResponse = MutableStateFlow(emptyList<LocalDtoItem>())
     val moneyResponse: StateFlow<List<LocalDtoItem>>
